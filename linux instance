@@ -1,0 +1,21 @@
+sudo -i
+
+yum install httpd
+
+service httpd start
+
+yum install php php-mysql
+
+service httpd restart
+
+yum update
+________________________
+
+
+cd /var/www/html
+
+vim test.php
+
+<?php
+echo 'Hello, World!';
+?>
