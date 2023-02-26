@@ -1,0 +1,19 @@
+copy instance public dns 
+go to filezilla
+new , site mananger,
+protocol:SFTP-SHH protocol
+host:paste public dns
+port:22
+logon:keypair
+user:ec2-user
+put keypair
+connect
+after connection
+upload index.html
+go to aws console
+connect instance
+sudo yum install
+sudo service httpd start
+ls
+sudo cp index.html /var/www/html
+in browser public_ip/index.html
