@@ -1,0 +1,189 @@
+1)linux instance
+
+sudo -i
+
+yum install httpd
+
+service httpd start
+
+yum install php php-mysql
+
+service httpd restart
+
+yum update
+________________________
+
+
+cd /var/www/html
+
+vim test.php
+
+<?php
+echo 'Hello, World!';
+?>
+
+2)ubuntu instance
+//Install R
+
+sudo apt-get dist-upgrade
+sudo apt-get upgrade
+
+sudo su
+echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+apt-get update
+apt-get install r-base
+// R ( This is for R command prompt)
+
+R
+
+R Program
+# take input from the user
+
+#nterms = as.integer(readline(prompt="How many terms? "))
+
+# first two terms
+nterms = 50 
+
+n1 = 0
+
+n2 = 1
+
+count = 2
+
+# check if the number of terms is valid
+
+if(nterms <= 0) 
+{
+  
+print("Plese enter a positive integer")
+
+} else {
+  if(nterms == 1) 
+{
+    
+print("Fibonacci sequence:")
+  
+  print(n1)
+ 
+ } 
+else 
+{
+    
+print("Fibonacci sequence:")
+  
+  print(n1)
+  
+  print(n2)
+    
+while(count < nterms) 
+{
+     
+ nth = n1 + n2
+    
+  print(nth)
+   
+   # update values
+   
+3)windows instance
+create a instance with pem key pair
+click connect
+select rdp cleint
+download remote desktop file
+get password 
+upload pem file
+get password
+open downloaded file
+paste pasword
+download code block
+and do C program
+
+4)AMI
+click on instance with
+
+#!/bin/bash
+
+
+yum update -y
+
+yum install -y httpd.x86_64
+
+systemctl start httpd.service
+
+systemctl enable httpd.service
+
+echo "<h1>Hello world from $(hostname -f)<h1>" > /var/www/html/index.html
+
+under action create image
+go to image in sidebar under that AMI catalogue go to My AMI
+select ur ami thn go up launch instance
+and then create instance 
+u can see image o instace
+
+5)s3
+go to storage
+select s3 bucket
+create bucket,uncheck block access,check i acknowledge
+upload the html file
+after uploading go that file,under permission tab ,edit permission
+thn copy it paste in tab
+
+6)Load balancer
+create two linux instance with this in additional
+
+#!/bin/bash
+
+
+yum update -y
+
+yum install -y httpd.x86_64
+
+systemctl start httpd.service
+
+systemctl enable httpd.service
+
+echo "<h1>Hello world from $(hostname -f)<h1>" > /var/www/html/index.html
+
+go to load balancer
+create balancer
+select vpc,subnet,ur intance created 
+and create load balance
+copy and paste it dns name and see refresh it see changes
+
+6)auto scaling
+create a launch configuration
+name
+copy the 1st ami from AMI catalouge ami-0e742cca61fb65051
+instance type t2.micro
+security group : SSH,http,all traffic\
+chose keypair
+create launch group
+select launch group and under action create auto scale group
+select deault vpc
+helath chechk elb and 200
+nesxt security policies
+desired capacity 2
+minimum capacity 2
+maximum capacity 4
+and then create
+
+7)file zilla
+copy instance public dns 
+go to filezilla
+new , site mananger,
+protocol:SFTP-SHH protocol
+host:paste public dns
+port:22
+logon:keypair
+user:ec2-user
+put keypair
+connect
+after connection
+upload index.html
+go to aws console
+connect instance
+sudo yum install
+sudo service httpd start
+ls
+sudo cp index.html /var/www/html
+in browser public_ip/index.html
