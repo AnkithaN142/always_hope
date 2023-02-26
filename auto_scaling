@@ -1,0 +1,15 @@
+create a launch configuration
+name
+copy the 1st ami from AMI catalouge ami-0e742cca61fb65051
+instance type t2.micro
+security group : SSH,http,all traffic\
+chose keypair
+create launch group
+select launch group and under action create auto scale group
+select deault vpc
+helath chechk elb and 200
+nesxt security policies
+desired capacity 2
+minimum capacity 2
+maximum capacity 4
+and then create
