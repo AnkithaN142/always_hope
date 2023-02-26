@@ -1,0 +1,20 @@
+create two linux instance with this in additional
+
+#!/bin/bash
+
+
+yum update -y
+
+yum install -y httpd.x86_64
+
+systemctl start httpd.service
+
+systemctl enable httpd.service
+
+echo "<h1>Hello world from $(hostname -f)<h1>" > /var/www/html/index.html
+
+go to load balancer
+create balancer
+select vpc,subnet,ur intance created 
+and create load balance
+copy and paste it dns name and see refresh it see changes
