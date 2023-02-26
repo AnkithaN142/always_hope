@@ -1,0 +1,62 @@
+//Install R
+
+sudo apt-get dist-upgrade
+sudo apt-get upgrade
+
+sudo su
+echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+apt-get update
+apt-get install r-base
+// R ( This is for R command prompt)
+
+R
+
+R Program
+# take input from the user
+
+#nterms = as.integer(readline(prompt="How many terms? "))
+
+# first two terms
+nterms = 50 
+
+n1 = 0
+
+n2 = 1
+
+count = 2
+
+# check if the number of terms is valid
+
+if(nterms <= 0) 
+{
+  
+print("Plese enter a positive integer")
+
+} else {
+  if(nterms == 1) 
+{
+    
+print("Fibonacci sequence:")
+  
+  print(n1)
+ 
+ } 
+else 
+{
+    
+print("Fibonacci sequence:")
+  
+  print(n1)
+  
+  print(n2)
+    
+while(count < nterms) 
+{
+     
+ nth = n1 + n2
+    
+  print(nth)
+   
+   # update values
+   
