@@ -1,0 +1,120 @@
+
+<%@page import="java.sql.DriverManager"%>
+
+<%@page import="java.sql.ResultSet"%>
+
+<%@page import="java.sql.Statement"%>
+
+<%@page import="java.sql.Connection"%>
+
+
+<%
+
+String id = request.getParameter("userId");
+
+String driverName = "com.mysql.cj.jdbc.Driver";
+
+String hostname = "rondb.c93fxu82udnu.ap-south-1.rds.amazonaws.com";
+
+String port = "3306";
+
+String dbName = "RONdb";
+
+String userId = "admin";
+
+String password = "admin123";
+
+String connectionUrl = "jdbc:mysql://" + hostname + ":" + port + "/" + dbName + "?user=" + userId + "&password=" + password;
+
+
+
+try {
+
+Class.forName(driverName);
+
+} catch (ClassNotFoundException e) {
+
+e.printStackTrace();
+
+}
+
+
+Connection connection = null;
+
+Statement statement = null;
+
+ResultSet resultSet = null;
+
+%>
+
+<h2 align="center"><font><strong>Retrieve data from database in jsp</strong></font></h2>
+
+<table align="center" cellpadding="5" cellspacing="5" border="1">
+
+<tr>
+
+
+</tr>
+
+<tr bgcolor="#A52A2A">
+
+<td><b>id</b></td>
+
+<td><b>user_id</b></td>
+
+<td><b>Password</b></td>
+
+<td><b>Name</b></td>
+
+<td><b>Email</b></td>
+
+</tr>
+
+<%
+
+try{ 
+
+	Class.forName("com.mysql.cj.jdbc.Driver");  
+
+	Connection con=DriverManager.getConnection("jdbc:mysql://rondb.c93fxu82udnu.ap-south-1.rds.amazonaws.com:3306/RONdb?user=admin&password=admin123");  
+
+	 if (con != null) {
+
+         System.out.println("Connected to the database test1");
+
+     } 
+
+		Statement stmt=con.createStatement();  
+
+		ResultSet rs=stmt.executeQuery("select * from RONdb.student");  
+
+while(resultSet.next()){
+
+%>
+
+<tr bgcolor="#DEB887">
+
+
+<td><%=resultSet.getInt("id") %></td>
+
+<td><%=resultSet.getString("name") %></td>
+
+
+
+</tr>
+
+
+<% 
+
+}
+
+
+} catch (Exception e) {
+
+e.printStackTrace();
+
+}
+
+%>
+
+</table>
