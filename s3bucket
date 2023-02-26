@@ -1,0 +1,6 @@
+go to storage
+select s3 bucket
+create bucket,uncheck block access,check i acknowledge
+upload the html file
+after uploading go that file,under permission tab ,edit permission
+thn copy it paste in tab
